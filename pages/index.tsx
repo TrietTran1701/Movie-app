@@ -1,17 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
+import Header from "../components/common/Header"
 const Home: NextPage = () => {
+
   return (
-    <div>
+    <div className="dark:bg-dark-theme bg-light-theme">
       <Head>
         <title>Netflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-
+    <Header/>
+    <main>
+    </main>
     </div>
   )
 }
