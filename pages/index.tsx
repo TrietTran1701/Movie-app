@@ -4,7 +4,7 @@ import Header from "../components/common/Header"
 const Home: NextPage = () => {
 
   return (
-    <div className="h-screen dark:bg-dark-theme bg-light-theme px-5">
+    <div className="h-screen dark:bg-dark-theme bg-light-theme">
       <Head>
         <title>Netflix</title>
         <link rel="icon" href="/favicon.ico" />

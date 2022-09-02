@@ -1,11 +1,13 @@
 import {useState,useEffect} from "react"
 import {BsMoon} from "react-icons/bs"
+import {GiHamburgerMenu} from "react-icons/gi"
 import {BsSun} from 'react-icons/bs'
 import {useTheme} from 'next-themes'
 import Sidebar from "./Sidebar"
 const Header = () => {
   const {systemTheme,theme,setTheme} = useTheme();
   const [mounted,setMounted] = useState(false);
+  const [activeSidebar, setActiveSidebar] = useState(false);
   useEffect(() =>{
     setMounted(true)
   },[])
@@ -27,15 +29,19 @@ const Header = () => {
   }
 
   return (
-    <header className="flex md:hidden items-center justify-between py-5 dark:text-white">
+    <>
+    <header className="flex md:hidden px-5 py-5 items-center justify-between dark:text-white">
       <img src="https://rb.gy/ulxxee" width={100} height={100} alt='logo' className="cursor-pointer object-contain"/>
-     <div className="flex items-center gap-5">
+     <div className="flex items-center justify-between">
      
      {renderThemeChanger()}
+    <GiHamburgerMenu size={22}  className="ml-5 cursor-pointer" onClick={() => setActiveSidebar(!activeSidebar)}/>      
       </div> 
-      
-     <Sidebar /> 
     </header>
+      <div className="flex items-start">
+      <Sidebar activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} />
+      </div>
+    </>
   )
 }
 
