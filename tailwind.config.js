@@ -13,6 +13,7 @@ module.exports = {
         "red-light": "#E40405",
         "red-bold": "#370102",
         "dark-lighten": "#333335",
+        "gray-darken": "#3a3939",
       },
     },
   },
